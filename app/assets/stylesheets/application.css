@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+	font-family: "Inter", sans-serif;
+	letter-spacing: 0.01rem;
+	font-size: 1.2rem;
+}
+
+body {
+	text-align: center;
+}
+
+.grid-container {
+	resize: both;
+	overflow: auto;
+	display: grid;
+	border: 1px solid grey;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+}
+
+.grid-item {
+	width: 125px;
+	height: 125px;
+	background-color: #fee;
+}

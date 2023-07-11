@@ -1,18 +1,27 @@
 <h1>Find a Flickr Feed</h1>
+<h4>(Examples: "198780121@N08" or "polybazze" or "danielfoster" )</h4>
+<%= render "form" %>
+<%= 'No user was found with that ID.' unless @user_nsid %>
 
-<form action="/" method="get" accept-charset="UTF-8">
-<!--form action="/flights" accept-charset="UTF-8" method="get" class="card"-->
-	<label for="flickr_id">Flicker User ID</label>
-	<input type="text" name="flickr_id">
-	<input type="submit">
-</form>
+<% if @feed_urls %>
 
-<br>
+	<div class="grid-container">
 
-<%#= form_with url: "/", method: :get do |f| %>
-<%#= f.label :flickr_id %>
-<%#= f.text_field :flickr_id %>
-<%#= f.submit %>
-<%# end %>
+  <!--% @feed_urls.each do |url| %-->
+		<!--div class="grid-item"-->
+			<!--%= image_tag(url) %-->
+		<!--/div-->
+  <!--% end %-->
 
-<%= @feed_photos %>
+	</div>
+<% end %>
+
+<div class="grid-container">
+
+	<% 25.times do %>
+		<div class="grid-item">
+		photo
+		</div>
+	<% end %>
+
+</div>
