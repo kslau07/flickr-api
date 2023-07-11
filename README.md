@@ -1,24 +1,8 @@
-# README
+# Odin Rails Project: Flickr API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Link to project specs can be found here:  
+> https://www.theodinproject.com/lessons/ruby-on-rails-flickr-api
 
-Things you may want to cover:
+## Description
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In this project we will practice using a 3rd party API, namely Flickr. It will be a simple app that shows the feed of a specified user. The purpose of this project is to familiarize us with the process of signing up for and utilizing a popular API that comes with thorough documentation.

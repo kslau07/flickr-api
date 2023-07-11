@@ -1,1 +1,18 @@
-hello rails
+<h1>Find a Flickr Feed</h1>
+
+<form action="/" method="get" accept-charset="UTF-8">
+<!--form action="/flights" accept-charset="UTF-8" method="get" class="card"-->
+	<label for="flickr_id">Flicker User ID</label>
+	<input type="text" name="flickr_id">
+	<input type="submit">
+</form>
+
+<br>
+
+<%#= form_with url: "/", method: :get do |f| %>
+<%#= f.label :flickr_id %>
+<%#= f.text_field :flickr_id %>
+<%#= f.submit %>
+<%# end %>
+
+<%= @feed_photos %>
