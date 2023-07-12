@@ -1,5 +1,5 @@
 <h1>Find a Flickr Feed</h1>
-<h4>(Examples: "198780121@N08" or "polybazze" or "danielfoster" )</h4>
+<h4>(Examples: "198780121@N08" or "polybazze" )</h4>
 <%= render "form" %>
 <%= 'No user was found with that ID.' unless @user_nsid %>
 
@@ -7,21 +7,19 @@
 
 	<div class="grid-container">
 
-  <!--% @feed_urls.each do |url| %-->
-		<!--div class="grid-item"-->
-			<!--%= image_tag(url) %-->
-		<!--/div-->
-  <!--% end %-->
+  <% @feed_urls.each do |url| %>
+		<div class="grid-item">
+			<%= image_tag(url) %>
+		</div>
+  <% end %>
 
 	</div>
 <% end %>
 
-<div class="grid-container">
-
-	<% 25.times do %>
-		<div class="grid-item">
-		photo
-		</div>
-	<% end %>
-
-</div>
+<!--div class="grid-container"-->
+	<!--% 25.times do %-->
+		<!--div class="grid-item"-->
+		
+		<!--/div-->
+	<!--% end %-->
+<!--/div-->

@@ -5,9 +5,15 @@ class StaticPagesController < ApplicationController
 
     @user_nsid = lookup_username_or_nsid(form_params[:username_or_nsid], flickr)
 
+    # rand_amt = rand(25..33)
+    rand_amt = 25
+
+    
     if @user_nsid
-      user_public_photos = flickr.people.getPublicPhotos(user_id: @user_nsid)
+      user_public_photos = flickr.people.getPhotos(user_id: @user_nsid, per_page: rand_amt)
+      # user_public_photos = flickr.people.getPhotos(user_id: "198780121@N08", per_page: 25)
       @feed_urls = user_public_photos.map { |photo| Flickr.url_m(photo) }
+      # binding.break # delete me
     end
   end
 
@@ -19,9 +25,9 @@ class StaticPagesController < ApplicationController
     # Try nsid lookup
     begin
       flickr.people.getInfo(user_id: user_id_string)
-    # rescue Flickr::FailedResponse
-    rescue Exception => e
-    puts e
+    rescue Flickr::FailedResponse
+    # rescue Exception => e
+    # puts e
     else
       return user_id_string
     end
@@ -29,9 +35,9 @@ class StaticPagesController < ApplicationController
     # Try username lookup
     begin
       user = flickr.people.findByUsername(username: user_id_string)
-    # rescue Flickr::FailedResponse
-    rescue Exception => e
-      puts e
+    rescue Flickr::FailedResponse
+    # rescue Exception => e
+    #   puts e
     else
       return user.nsid
     end

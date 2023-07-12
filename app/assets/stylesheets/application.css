@@ -26,15 +26,20 @@ body {
 
 .grid-container {
 	resize: both;
-	overflow: auto;
+	/* overflow: auto; */
 	display: grid;
 	border: 1px solid grey;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1rem;
+	background-color: gainsboro;
 
 }
 
+/* https://stackoverflow.com/questions/61763677/css-grid-auto-fill-widths-set-by-content */
 .grid-item {
-	width: 125px;
-	height: 125px;
-	background-color: #fee;
+	min-width: max-content;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	/* background-color: #fee; */
 }
