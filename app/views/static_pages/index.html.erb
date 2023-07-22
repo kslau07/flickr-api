@@ -5,15 +5,15 @@
 
 <% if @feed_urls %>
 
-	<div class="grid-container">
+	<ul class="container">
 
   <% @feed_urls.each do |url| %>
-		<div class="grid-item">
-			<%= image_tag(url) %>
-		</div>
+		<li class="img-wrapper">
+			<span class="img"><%= image_tag(url) %></span>
+		</li>
   <% end %>
 
-	</div>
+	</ul>
 <% end %>
 
 <!--div class="grid-container"-->
